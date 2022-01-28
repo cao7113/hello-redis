@@ -1,0 +1,22 @@
+# https://taskfile.dev
+version: '3'
+tasks:
+  try:
+    cmds:
+    - redis-cli --version
+
+  version: 
+    cmds:
+    - redis-cli --version
+    - brew info redis
+
+  setup:
+    cmds:
+    - task: install-redis
+    - task: version
+
+  install-redis:
+    status:
+      - "which redis-cli"
+    cmds:
+      - brew install redis
