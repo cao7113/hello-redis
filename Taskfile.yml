@@ -1,6 +1,14 @@
 # https://taskfile.dev
 version: '3'
 tasks:
+  default:
+    deps:
+    - version
+    
+  cli:
+    cmds:
+    - redis-cli
+
   try:
     cmds:
     - redis-cli --version
